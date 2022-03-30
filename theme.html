@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.dark{
+    background-color: black;
+    color: white;
+}
+.light{
+    background-color: gray;
+    color: black;
+}
+
+    </style>
+</head>
+<body>
+    <button class="btn1" >Dark</button>
+    <button class="btn2">Light</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui labore mollitia veritatis
+         cum molestiae quos ipsam vel consequuntur quae ipsa sapiente odio, doloribus tempore 
+         odit, ad possimus quas, praesentium repellendus.</p>
+
+</body>
+<script>
+    let body = document.body;
+    let btn1 = document.querySelector(".btn1");
+    let btn2 = document.querySelector(".btn2");
+
+    btn1.addEventListener("click",function(e){
+        if(body.classList.contains('light')){
+         body.classList.replace('light', 'dark')
+         console.log(body)
+        }  
+         else if(body.classList.contains('dark')){
+             e.preventDefault()
+        }
+        else{
+            body.classList.add('dark')
+            console.log(body)
+           }
+    })
+    btn2.addEventListener("click",function(e){
+        if(body.classList.contains('dark')){
+            body.classList.replace('dark','light')
+            console.log(body)
+        }
+        else if(body.classList.contains('light')){
+             e.preventDefault()
+        }   
+        else{
+            body.classList.add('light')
+            console.log(body)
+        }     
+    })
+    
+</script>
+</html>
